@@ -1,0 +1,134 @@
+<body>
+  <div class="wrapper">
+    <form [formGroup]="signupForm" (ngSubmit)="userRegister()">
+      <h1 class="title">REGISTER</h1>
+
+      <div class="form-group">
+        <input
+          formControlName="adminoruser"
+          type="text"
+          id="adminoruser"
+          class="form-input"
+          placeholder="Enter admin/user"
+          name="adminoruser"
+          [(ngModel)]="user.adminoruser"
+        />
+        <div *ngIf="adminoruser?.invalid && adminoruser?.touched">
+          <small *ngIf="adminoruser?.errors?.['required']" class="text-danger">
+            admin/user is required
+          </small>
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="email"
+          type="email"
+          id="email"
+          class="form-input"
+          placeholder="Enter email"
+          name="email"
+          [(ngModel)]="user.email"
+        />
+        <div *ngIf="email?.invalid && email?.touched">
+          <small *ngIf="email?.errors?.['required']" class="text-danger">
+            email is required
+          </small>
+          <small *ngIf="email?.errors?.['email']" class="text-danger">
+            enter a valid mail id
+          </small>
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="username"
+          type="text"
+          id="username"
+          class="form-input"
+          placeholder="Enter username"
+          name="username"
+          [(ngModel)]="user.username"
+        />
+        <div *ngIf="username?.invalid && username?.touched">
+          <small *ngIf="username?.errors?.['required']" class="text-danger">
+            username is required
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input
+          formControlName="mobileNumber"
+          type="text"
+          id="mobileNumber"
+          class="form-input"
+          placeholder="Enter mobileNumber"
+          name="mobileNumber"
+          [(ngModel)]="user.mobileNumber"
+        />
+        <div *ngIf="mobileNumber?.invalid && mobileNumber?.touched">
+          <small *ngIf="mobileNumber?.errors?.['required']" class="text-danger">
+            mobile number is required
+          </small>
+          <small *ngIf="mobileNumber?.errors?.['pattern']" class="text-danger">
+            mobile number is invalid
+          </small>
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="password"
+          type="password"
+          id="password"
+          class="form-input"
+          placeholder="password"
+          name="password"
+          [(ngModel)]="user.password"
+        />
+        <div *ngIf="password?.invalid && password?.touched">
+          <small *ngIf="password?.errors?.['required']" class="text-danger">
+            password is required
+          </small>
+          <small *ngIf="password?.errors?.['minlength']" class="text-danger">
+            Atleast 5 characters should be present
+          </small>
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="confirmPassword"
+          type="password"
+          id="confirmPassword"
+          class="form-input"
+          placeholder="confrim password"
+          name="confirmPassword"
+          [(ngModel)]="user.confirmPassword"
+        />
+        <div *ngIf="confirmPassword?.invalid && confirmPassword?.touched">
+          <small
+            *ngIf="confirmPassword?.errors?.['required']"
+            class="text-danger"
+          >
+            confirm password is required
+          </small>
+          <small
+            *ngIf="confirmPassword?.errors?.['MustMatch']"
+            class="text-danger"
+          >
+            password doesn't match
+          </small>
+        </div>
+      </div>
+      <button
+        [disabled]="signupForm.invalid"
+        class="btn-primary"
+        id="submitButton"
+      >
+        Submit
+      </button>
+    </form>
+    <p class="form-message">
+      Already a user?
+      <a routerLink="/login">LOGIN</a>
+    </p>
+  </div>
+</body>

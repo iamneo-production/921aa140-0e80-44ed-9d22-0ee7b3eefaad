@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <h2>My Bookings</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>product_name</th>
+        <th>model_number</th>
+        <th>date_of_purchase</th>
+        <th>contactNumber</th>
+        <th>problem_description</th>
+        <th>available_slot</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of appointments">
+        <td>{{ appointment.id }}</td>
+        <td>{{ appointment.product_name }}</td>
+        <td>{{ appointment.model_number }}</td>
+        <td>{{ appointment.date_of_purchase }}</td>
+        <td>{{ appointment.contactNumber }}</td>
+        <td>{{ appointment.problem_description }}</td>
+        <td>{{ appointment.available_slot }}</td>
+        <td>
+          <button
+            class="btn btn-info"
+            (click)="updateAppointment(appointment.id)"
+          >
+            Update
+          </button>
+          <button
+            class="btn btn-danger"
+            (click)="deleteAppointment(appointment.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

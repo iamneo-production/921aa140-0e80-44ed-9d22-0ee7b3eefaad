@@ -1,0 +1,150 @@
+<!-- <body>
+  <div class="wrapper">
+    <form>
+      <h2 class="title">Add Appointment</h2>
+
+      <div class="form-group">
+        <input
+          formControlName="product_name"
+          type="text"
+          id="product_name"
+          class="form-input"
+          placeholder="Enter product_name"
+          name="product_name"
+          [(ngModel)]="appointment.product_name"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="model_number"
+          type="text"
+          id="model_number"
+          class="form-input"
+          placeholder="Enter model_number"
+          name="model_number"
+          [(ngModel)]="appointment.model_number"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="date_of_purchase"
+          type="text"
+          id="date_of_purchase"
+          class="form-input"
+          placeholder="Enter date_of_purchase"
+          name="date_of_purchase"
+          [(ngModel)]="appointment.date_of_purchase"
+        />
+      </div>
+
+      <div class="form-group">
+        <input
+          formControlName="contactNumber"
+          type="text"
+          id="contactNumber"
+          class="form-input"
+          placeholder="Enter contactNumber"
+          name="contactNumber"
+          [(ngModel)]="appointment.contactNumber"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="problem_description"
+          type="text"
+          id="problem_description"
+          class="form-input"
+          placeholder="problem_description"
+          name="problem_description"
+          [(ngModel)]="appointment.problem_description"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="available_slot"
+          type="date"
+          id="available_slot"
+          class="form-input"
+          placeholder="available_slot"
+          name="available_slot"
+          [(ngModel)]="appointment.available_slot"
+        />
+      </div>
+      <button class="btn-primary" id="submitButton">
+        Add
+      </button>
+    </form>
+  </div>
+</body> -->
+<div class="col-md-6 offset-md-3">
+  <h3>Add appointment</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>product_name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="product_name"
+        [(ngModel)]="appointment.product_name"
+        name="product_name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>model_number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="model_number"
+        [(ngModel)]="appointment.model_number"
+        name="model_number"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>date_of_purchase</label>
+      <input
+        type="text"
+        class="form-control"
+        id="date_of_purchase"
+        [(ngModel)]="appointment.date_of_purchase"
+        name="date_of_purchase"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>contactNumber</label>
+      <input
+        type="text"
+        class="form-control"
+        id="contactNumber"
+        [(ngModel)]="appointment.contactNumber"
+        name="contactNumber"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>problem_description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="problem_description"
+        [(ngModel)]="appointment.problem_description"
+        name="problem_description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>available_slot</label>
+      <input
+        type="text"
+        class="form-control"
+        id="available_slot"
+        [(ngModel)]="appointment.available_slot"
+        name="available_slot"
+      />
+    </div>
+
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+</div>

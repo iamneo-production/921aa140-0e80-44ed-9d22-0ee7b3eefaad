@@ -1,0 +1,35 @@
+<div>
+  <h2 class="text-center">{{ title }}</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Centername</th>
+        <th>Phonenumber</th>
+        <th>Address</th>
+        <th>Imageurl</th>
+        <th>Email</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let center of centers">
+        <td>{{ center.centername }}</td>
+        <td>{{ center.phonenumber }}</td>
+        <td>{{ center.address }}</td>
+        <td>{{ center.imageurl }}</td>
+        <td>{{ center.email }}</td>
+        <td>{{ center.description }}</td>
+        <td>
+          <button (click)="updateCenter(center.id)" class="btn btn-info">
+            Update
+          </button>
+          <button (click)="deleteCenter(center.id)" class="btn btn-danger">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
